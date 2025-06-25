@@ -4,6 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+        .flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container {
+            width: 20px;
+        }
+        .glow-input {
+            width: 50%;
+            height: 20px;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        .glow-button {
+            width: 80px;
+            height: 25px;
+            font-size: 12px;
+        }
+        .status-container {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="flex gap-4">
@@ -11,21 +40,21 @@
             <div class="relative">
                 <div class="form-container">
                     <div class="mb-4">
-                        <!-- <label for="username" class="block text-sm mb-2 thick-label">Username:</label> -->
                         <input 
                             type="text" 
                             id="username" 
                             required
                             class="glow-input"
+                            placeholder="Username"
                         >
                     </div>
                     <div class="mb-6">
-                        <!-- <label for="password" class="block text-sm mb-2 thick-label">Password:</label> -->
                         <input 
                             type="password" 
                             id="password" 
                             required
                             class="glow-input"
+                            placeholder="Password"
                         >
                     </div>
                     <button 
@@ -37,22 +66,9 @@
                 </div>
             </div>
         </form>
-
-        <div id="loggedInContent" class="hidden">
-            <div class="button-container">
-                <button 
-                    id="logoutButton"
-                    class="glow-button thick-label"
-                >
-                    Logout
-                </button>
-              
-            </div>
+        <div class="status-container">
+            <div id="statusMessage" class="text-sm glow">no</div>
         </div>
- <div class="status-container">
-            <div id="statusMessage" class="text-sm glow"></div>
-        </div>
-        <!-- <div id="error" class="error-message"></div> -->
     </div>
     <script src="popup.js"></script>
 </body>
